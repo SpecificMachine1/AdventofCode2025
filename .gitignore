@@ -1,0 +1,6 @@
+*~
+.*
+!/.gitignore
+data/*input.dat
+*.c
+*.o
