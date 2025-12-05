@@ -1,4 +1,7 @@
 test, 	 status
-zeros, 	pass
-zero passes, 	pass
-Passing tests: 2, 	Failing tests: 0
+ends on zero, 	pass
+passes zero, 	pass
+forum edge cases, 	pass
+doubles invalid, 	pass
+all n-tuples invalid, 	pass
+Passing tests: 5, 	Failing tests: 0
