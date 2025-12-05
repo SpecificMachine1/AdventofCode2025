@@ -1,0 +1,13 @@
+(library (aoc char-list)
+  (export tokenize)
+  (import (rnrs base)
+          (rnrs lists))
+
+  (define (tokenize char-list sep)
+    (fold-right (lambda (this-char tokens)
+                  (if (eq? this-char sep)
+                    (cons '() tokens)
+                    (cons (cons this-char (car tokens)) (cdr tokens))))
+                '(())
+               char-list))
+)
