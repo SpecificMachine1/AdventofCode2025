@@ -1,5 +1,5 @@
 (library (aoc data)
-  (export iota inclusive-range factors)
+  (export iota inclusive-range factors list->string->num)
   (import (rnrs base)
           (rnrs lists)
           (rnrs control))
@@ -25,4 +25,7 @@
     (fold-left (lambda (factors num) (if (zero? (mod n num)) (cons num factors) factors))
                     '()
                     (iota (- n 1) 1)))
+
+  (define (list->string->num chars)
+    (string->number (list->string chars)))
 )
