@@ -1,6 +1,7 @@
 (import (rnrs)
         (prefix (day day01) day01-)
         (prefix (day day02) day02-)
+        (prefix (day day03) day03-)
         (test csv))
 (test-start)
 ;;day 1 tests
@@ -16,8 +17,18 @@
 (let ((data (day02-get-data "../data/day02-example1.dat")))
   (test-equal "doubles invalid" 1227775554 (fold-left + 0 (day02-invalid-ids-numeric data)))
   (test-equal "all n-tuples invalid" 4174379265 (fold-left + 0 (day02-invalid-all-reps data))))
+;;day 3 tests
+(let ((data (day03-get-data "../data/day03-example1.dat")))
+  (test-equal "total joltage" 357 (day03-total-output data))
+  (test-equal "override joltage (12 banks)" 3121910778619 (day03-total-overide-output data)))
 (test-end)
 
+#;(let ((data (day03-get-data "../data/day03-input.dat")))
+  (display (day03-total-output data))
+  (newline)
+  (display (day03-total-overide-output data))
+  (newline))
+  
 #;(let ((data (day02-get-data "../data/day02-input.dat")))
   (display (fold-left + 0 (day02-invalid-ids-numeric data)))
   (newline)
