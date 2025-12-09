@@ -26,9 +26,14 @@ testing_deps := $(days) $(data)
 help:  ## print this message
 	grep -E '^[^ :]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+all: guile-test chez-test ## run all tests
+
+
 guile-test: r6rs-test.scm $(testing_deps) ## test against Guile
 	$(GUILE) $(GUILEFLAGS) $< | tee test-logs/guile.csv 
 
 chez-test: r6rs-test.scm $(testing_deps) ## test against Chez
 	$(CHEZ) $(CHEZFLAGS) $< | tee test-logs/chez.csv 
 
+clean: ## delete test files in ./test-logs
+	rm -rf test-logs/*.csv
