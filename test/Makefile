@@ -35,5 +35,8 @@ guile-test: r6rs-test.scm $(testing_deps) ## test against Guile
 chez-test: r6rs-test.scm $(testing_deps) ## test against Chez
 	$(CHEZ) $(CHEZFLAGS) $< | tee test-logs/chez.csv 
 
+matrix-test: matrix-tests.scm $(testing_deps) ## tests matrix struct
+	$(CHEZ) $(CHEZFLAGS) $< | tee test-logs/matrix.csv 
+
 clean: ## delete test files in ./test-logs
 	rm -rf test-logs/*.csv

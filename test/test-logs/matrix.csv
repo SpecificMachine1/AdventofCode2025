@@ -1,0 +1,11 @@
+test, 	 status
+item access, 	pass
+row access, 	pass
+column access, 	pass
+start set value, 	pass
+end set value, 	pass
+matrix-map, 	pass
+item access 2, 	pass
+vector transpose, 	pass
+sub matrix, 	pass
+Passing tests: 9, 	Failing tests: 0
