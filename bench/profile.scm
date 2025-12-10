@@ -1,4 +1,4 @@
-(import (chezscheme)
+(import (rnrs)
         (prefix (day day01) day01-)
         (prefix (day day02) day02-)
         (prefix (day day03) day03-)

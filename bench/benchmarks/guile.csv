@@ -1,0 +1,7 @@
+name, microseconds to run once, average microseconds for 10 runs
+1.1 ends on zero,20000.0,13000.0
+1.2 all zero passes,10000.0,14000.0
+2.1 doubles invalid,470000.0,459000.0
+2.2 all n-tuples invalid,3250000.0,3265000.0
+3.1 normal total joltage,10000.0,12000.0
+3.2 override joltage,10000.0,13000.0

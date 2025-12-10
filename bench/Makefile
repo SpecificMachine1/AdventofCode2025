@@ -11,7 +11,7 @@ VPATH := .:..
 CHEZ = chez
 CHEZFLAGS = --libdirs .:.. --program
 GUILE = guile
-GUILEFLAGS = -L . -L .. -x .sls --no-auto-compile --no-debug
+GUILEFLAGS = -L . -L .. -x .guile.sls -x .sls --no-debug 
 
 # dependencies
 days := $(wildcard day/*)
@@ -26,17 +26,15 @@ bench_deps := $(days) $(data)
 help:  ## print this message
 	grep -E '^[^ :]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-#all: guile-test chez-test ## run all tests
+all: guile-bench chez-bench ## run all benchs
 
 
-#guile-test: r6rs-test.scm $(testing_deps) ## test against Guile
-#	$(GUILE) $(GUILEFLAGS) $< | tee test-logs/guile.csv 
+guile-bench: profile.scm $(bench_deps) ## test against Guile
+	$(GUILE) $(GUILEFLAGS) $< | tee benchmarks/guile.csv 
 
-chez-bench: profile.scm $(testing_deps) ## test against Chez
+chez-bench: profile.scm $(bench_deps) ## test against Chez
 	$(CHEZ) $(CHEZFLAGS) $< | tee benchmarks/chez.csv 
 
-#matrix-test: matrix-tests.scm $(testing_deps) ## tests matrix struct
-#	$(CHEZ) $(CHEZFLAGS) $< | tee test-logs/matrix.csv 
 
 clean: ## delete test files in ./test-logs
-	rm -rf test-logs/*.csv
+	rm -rf benchmarks/*.csv
