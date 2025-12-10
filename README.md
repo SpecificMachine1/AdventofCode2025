@@ -11,16 +11,21 @@
     - different record system
 
 ## aoc
-    Helper libraries: (aoc char-list), (aoc data), (aoc file), (aoc matrix)
+
+Helper libraries: (aoc char-list), (aoc data), (aoc file), (aoc matrix)
 
 ## bench
-    Files to run benchmarks and results
+
+Files to run benchmarks and results
 
 ## data
-    Input files- repo only has example data and samples made to test libraries. Input data is .gitignored
+
+Input files- repo only has example data and samples made to test libraries. Input data is .gitignored
 
 ## day
-    Solutions for each day, as libraries like (day day01)
+
+Solutions for each day, as libraries like (day day01)
 
 ## test
-    Files for testing and results
+
+Files for testing and results
