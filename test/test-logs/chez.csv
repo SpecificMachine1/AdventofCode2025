@@ -3,7 +3,7 @@ ends on zero, 	pass
 passes zero, 	pass
 forum edge cases, 	pass
 doubles invalid, 	pass
-all n-tuples invalid, 	pass
+..................................................................................................all n-tuples invalid, 	pass
 total joltage, 	pass
 override joltage (12 banks), 	pass
 Passing tests: 7, 	Failing tests: 0

@@ -14,12 +14,14 @@
     ((1000000000) "nanoseconds")
     (else (string-append "1/" (number->string units) "ths of a second"))))
 
-(define current-jiffy times)
-(define (jiffies-per-second) internal-time-units-per-second)
+(define current-jiffy gettimeofday)
+(define (jiffies-per-second) micro)
 (define flush-output-port force-output)
 
+(define (tod->microseconds t) (+ (* (car t) micro) (cdr t)))
+
 (define (diff t1 t2)
-  (- (tms:clock t1) (tms:clock t2)))
+  (- (tod->microseconds t1) (tod->microseconds t2)))
 
 (define-syntax time-it
   (syntax-rules ()

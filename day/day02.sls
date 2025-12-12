@@ -1,9 +1,10 @@
 (library (day day02)
-   (export get-data invalid-ids invalid-ids-numeric invalid-all-reps)
+   (export get-data invalid-ids invalid-ids-numeric invalid-all-reps factors)
    (import (rnrs base)
+           (rnrs io simple)
            (rnrs lists)
            (aoc file)
-           (aoc data)
+           (rename (aoc data) (factors data-factors))
            (aoc char-list))
 
 (define (get-data filename)
@@ -34,6 +35,19 @@
                     (else (check-loop (cdr nums) check-acc))))))))))
 
 (define (numeral-length n) (exact (ceiling (log n 10))))
+
+(define (memoize f)
+  (let ((memos '()))
+    (lambda args
+      (let ((memo (assoc args memos)))
+        (if memo
+          (cdr memo)
+          (let ((value (apply f args)))
+            (set! memos (cons (cons args value) memos))
+            value))))))
+
+;; trying memoizing factor to speed up
+(define factors (memoize data-factors))
 
 ;; same result, much faster than previous
 (define (invalid-ids-numeric ranges)
