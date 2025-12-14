@@ -2,6 +2,7 @@
         (prefix (day day01) day01-)
         (prefix (day day02) day02-)
         (prefix (day day03) day03-)
+        (prefix (day day04) day04-)
         (test csv))
 (test-start)
 ;;day 1 tests
@@ -21,7 +22,17 @@
 (let ((data (day03-get-data "../data/day03-example1.dat")))
   (test-equal "total joltage" 357 (day03-total-output data))
   (test-equal "override joltage (12 banks)" 3121910778619 (day03-total-overide-output data)))
+;; day 4 tests
+(let ((data (day04-get-data "../data/day04-example1.dat")))
+  (test-equal "4.1 rolls less than 4" 13 (day04-count-accessible data 4))
+  (test-equal "4.2 rools less than 4 with removal" 43 (day04-count-all-accessible data 4)))
 (test-end)
+
+#;(let ((data (day04-get-data "../data/day04-input.dat")))
+  (display (day04-count-accessible data 4))
+  (newline)
+  (display (day04-count-all-accessible data 4))
+  (newline))
 
 #;(let ((data (day03-get-data "../data/day03-input.dat")))
   (display (day03-total-output data))

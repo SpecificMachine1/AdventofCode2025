@@ -6,4 +6,6 @@ doubles invalid, 	pass
 all n-tuples invalid, 	pass
 total joltage, 	pass
 override joltage (12 banks), 	pass
-Passing tests: 7, 	Failing tests: 0
+4.1 rolls less than 4, 	pass
+4.2 rools less than 4 with removal, 	pass
+Passing tests: 9, 	Failing tests: 0
