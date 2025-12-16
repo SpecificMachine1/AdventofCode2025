@@ -1,11 +1,14 @@
 test, 	 status
-ends on zero, 	pass
-passes zero, 	pass
-forum edge cases, 	pass
-doubles invalid, 	pass
-all n-tuples invalid, 	pass
-total joltage, 	pass
-override joltage (12 banks), 	pass
+1.1 ends on zero, 	pass
+1.2 passes zero, 	pass
+1.2 forum edge cases, 	pass
+2.1 doubles invalid, 	pass
+2.1 all n-tuples invalid, 	pass
+3.1 total joltage, 	pass
+3.2 override joltage (12 banks), 	pass
 4.1 rolls less than 4, 	pass
 4.2 rools less than 4 with removal, 	pass
-Passing tests: 9, 	Failing tests: 0
+5.1 fresh in range, 	pass
+5.2 all in ranges, 	pass
+5.2 forum edge case, 	pass
+Passing tests: 12, 	Failing tests: 0
