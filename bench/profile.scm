@@ -3,6 +3,7 @@
         (prefix (day day02) day02-)
         (prefix (day day03) day03-)
         (prefix (day day04) day04-)
+        (prefix (day day05) day05-)
         (bench runner))
 (let ((runs 10)
       (units micro))
@@ -38,4 +39,12 @@
   (run "4.2 all passes rolls"
        runs
        units
-       (day04-count-all-accessible (day04-get-data "../data/day04-input.dat") 4)))
+       (day04-count-all-accessible (day04-get-data "../data/day04-input.dat") 4))
+  (run "5.1 count fresh ingredients"
+       runs
+       units
+       (day05-count-fresh (day05-get-data "../data/day05-input.dat")))
+  (run "5.2 count all fresh"
+       runs
+       units
+       (day05-count-all-fresh (day05-get-data "../data/day05-input.dat"))))
