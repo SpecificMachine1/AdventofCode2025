@@ -1,7 +1,10 @@
 (library (aoc char-list)
-  (export tokenize)
+  (export tokenize list->string->num)
   (import (rnrs base)
           (rnrs lists))
+
+(define (list->string->num chars)
+  (string->number (list->string chars)))
 
 (define (tokenize char-list sep)
   (fold-right (lambda (this-char tokens)

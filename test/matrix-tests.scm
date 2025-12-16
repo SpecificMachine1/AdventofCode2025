@@ -2,6 +2,7 @@
         (aoc matrix)
         (test csv)
         (aoc file)
+        (aoc char-list)
         (aoc data))
 (define (get-data filename)
   (let ((data (filename->char-lines filename)))

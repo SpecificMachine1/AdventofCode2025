@@ -1,5 +1,5 @@
 (library (aoc data)
-  (export iota inclusive-range factors list->string->num)
+  (export iota inclusive-range factors split-at-null)
   (import (rnrs base)
           (rnrs lists)
           (rnrs control))
@@ -26,6 +26,11 @@
              '()
              (iota (- n 1) 1)))
 
-(define (list->string->num chars)
-  (string->number (list->string chars)))
+(define (split-at-null data)
+  (fold-right (lambda (item input) (if (null? item)
+                                     (cons '() input)
+                                     (cons (cons item (car input)) (cdr input))))
+              '(())
+              data))
+
 )

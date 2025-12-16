@@ -3,6 +3,7 @@
   (import (rnrs base)
           (rnrs lists)
           (aoc file)
+          (aoc char-list)
           (aoc data))
 
 ;; did a numerical conversion for part one but for part two thought it would be easier to do
