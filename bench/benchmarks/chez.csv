@@ -1,11 +1,11 @@
 name, microseconds to run once, average microseconds for 10 runs
-1.1 ends on zero,330.0,465.1
-1.2 all zero passes,409.0,410.1
-2.1 doubles invalid,132280.0,132927.1
-2.2 all n-tuples invalid,337555.0,335316.5
-3.1 normal total joltage,234.0,377.9
-3.2 override joltage,356.0,413.8
-4.1 first pass rolls,2322.0,2211.8
-4.2 all passes rolls,52731.0,53101.0
-5.1 count fresh ingredients,323.0,342.2
-5.2 count all fresh,314.0,332.3
+1.1 ends on zero,337.0,471.8
+1.2 all zero passes,369.0,407.5
+2.1 doubles invalid,132446.0,133691.6
+2.2 all n-tuples invalid,334614.0,332525.2
+3.1 normal total joltage,250.0,369.3
+3.2 override joltage,428.0,305.0
+4.1 first pass rolls,2118.0,2139.1
+4.2 all passes rolls,52893.0,53066.3
+5.1 count fresh ingredients,319.0,339.8
+5.2 count all fresh,315.0,325.1
