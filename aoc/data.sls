@@ -1,5 +1,5 @@
 (library (aoc data)
-  (export iota inclusive-range factors split-at-null)
+  (export iota inclusive-range factors split-at-null transpose)
   (import (rnrs base)
           (rnrs lists)
           (rnrs control))
@@ -32,5 +32,8 @@
                                      (cons (cons item (car input)) (cdr input))))
               '(())
               data))
+
+(define (transpose list-of-lists)
+  (apply map (cons list list-of-lists)))
 
 )

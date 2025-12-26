@@ -4,6 +4,7 @@
         (prefix (day day03) day03-)
         (prefix (day day04) day04-)
         (prefix (day day05) day05-)
+        (prefix (day day06) day06-)
         (test csv))
 (test-start)
 ;;day 1 tests
@@ -32,8 +33,18 @@
   (test-equal "5.1 fresh in range" 3 (day05-count-fresh data))
   (test-equal "5.2 all in ranges" 14 (day05-count-all-fresh data))
   (test-equal "5.2 forum edge case" 16 (day05-count-all-fresh (day05-get-data "../data/day05-example2.dat"))))
+;; day 6 tests
+(let ((data (day06-get-data "../data/day06-example1.dat"))
+      (data-2 (day06-get-data-2 "../data/day06-example1.dat")))
+  (test-equal "6.1 sum all problems" 4277556 (day06-problem-sum data))
+  (test-equal "6.2 sum with vertical numbers" 3263827 (day06-problem-sum data-2)))
 (test-end)
 
+(let ((data (day06-get-data "../data/day06-input.dat")))
+  (display (day06-problem-sum data))
+  (newline)
+  (display (day06-problem-sum (day06-get-data-2 "../data/day06-input.dat")))
+  (newline))
 #;(let ((data (day05-get-data "../data/day05-input.dat")))
   (display (day05-count-fresh data))
   (newline)

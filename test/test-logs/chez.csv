@@ -11,4 +11,8 @@ test, 	 status
 5.1 fresh in range, 	pass
 5.2 all in ranges, 	pass
 5.2 forum edge case, 	pass
-Passing tests: 12, 	Failing tests: 0
+6.1 sum all problems, 	pass
+6.2 sum with vertical numbers, 	pass
+Passing tests: 14, 	Failing tests: 0
+6957525317641
+13215665360076

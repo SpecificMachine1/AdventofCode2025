@@ -1,7 +1,9 @@
 (library (aoc char-list)
-  (export tokenize list->string->num)
+  (export tokenize list->string->num char-list->sexp)
   (import (rnrs base)
-          (rnrs lists))
+          (rnrs lists)
+          (rnrs io simple)
+          (rnrs io ports))
 
 (define (list->string->num chars)
   (string->number (list->string chars)))
@@ -13,4 +15,8 @@
                   (cons (cons this-char (car tokens)) (cdr tokens))))
               '(())
               char-list))
+
+(define (char-list->sexp chars)
+  (read (open-string-input-port (list->string (append '(#\() chars '(#\)))))))
+
 )
